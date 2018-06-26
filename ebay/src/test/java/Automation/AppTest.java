@@ -6,28 +6,23 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 
-public class AppTest {
-	public static  AndroidDriver<AndroidElement> capabilities() throws MalformedURLException
-	{
+public class AppTest extends Base {
+	@Test
+	public static void main(String[] args) throws MalformedURLException {
 		
 
-	AndroidDriver<AndroidElement>  driver;
+		AndroidDriver<AndroidElement> driver=capabilities();
+	     driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	     driver.findElementByXPath("//android.widget.TextView[@text='Views']").click();
+	 driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"WebView\"));");
 
-		// TODO Auto-generated method stub
-	 File appDir = new File("src");
-     File app = new File(appDir, "ApiDemos-debug.apk");
-     DesiredCapabilities capabilities = new DesiredCapabilities();
-     
-     capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Rahulemulator");
-     capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
-    driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
-	    
-	    return driver;
+	
 	}
 	
 	
