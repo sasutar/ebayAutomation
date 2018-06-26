@@ -37,5 +37,7 @@
 	<classpathentry kind="lib" path="C:/Users/sajid sutar/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/commons-logging-1.2.jar"/>
 	<classpathentry kind="lib" path="C:/Users/sajid sutar/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/junit-4.12.jar"/>
 	<classpathentry kind="lib" path="C:/Users/sajid sutar/Downloads/poi-bin-3.17-20170915/poi-3.17/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sajid sutar/Downloads/log4j-1.2.17/apache-log4j-1.2.17/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/sajid sutar/.m2/repository/org/testng/testng/6.14.3/testng-6.14.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -12,7 +12,7 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.remote.MobilePlatform;
 
-public class Base {
+abstract class Base {
 
 	public static AndroidDriver<AndroidElement> Launch() throws MalformedURLException {
 
