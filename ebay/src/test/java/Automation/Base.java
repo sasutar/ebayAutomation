@@ -15,7 +15,9 @@ import io.appium.java_client.remote.MobilePlatform;
 abstract class Base {
 
 	public static AndroidDriver<AndroidElement> Launch() throws MalformedURLException {
-
+		// Declare AndroidDriver as the project only targets Android devices
+		// Use Appium Driver in case both IOS and Android devices are going to be the
+		// DUT
 		AndroidDriver<AndroidElement> driver;
 
 		// TODO Auto-generated method stub
@@ -23,7 +25,7 @@ abstract class Base {
 		File app = new File(appDir, "ApiDemos-debug.apk");
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 
-		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Rahulemulator");
+		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel2");
 		capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 		capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, MobilePlatform.ANDROID);
 		capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android device");

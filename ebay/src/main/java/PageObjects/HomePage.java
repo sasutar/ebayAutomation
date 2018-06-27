@@ -8,22 +8,23 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
-public class loginPage {
+public class HomePage {
 	// Call the driver from testcase to pageobject
-	public loginPage(AndroidDriver<AndroidElement> driver) {
+	public HomePage(AndroidDriver<AndroidElement> driver) {
 		// Initialize all elements with driver
 		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
 	}
 
-	@AndroidFindBy(className = "android.widget.ImageView")
-	public AndroidElement LoginImage;
+	@AndroidFindBy(id = "com.ebay.mobile:id/home")
+	public AndroidElement Home;
 
-	@AndroidFindBy(className = "android.widget.ImageView")
-	public AndroidElement UsernameEditText;
+	@AndroidFindBy(id = "com.ebay.mobile:id/search_box")
+	public AndroidElement SearchBox;
 
-	@AndroidFindBy(className = "android.widget.ImageView")
-	public AndroidElement PasswordEditText;
+	@AndroidFindBy(id = "com.ebay.mobile:id/textview_item_title")
+	public AndroidElement ProductTitle;
 
-	@AndroidFindBy(className = "android.widget.ImageView")
-	public AndroidElement LoginButton;
+	@AndroidFindBy(id = "com.ebay.mobile:id/textview_sign_in_status")
+	public AndroidElement signInStatus;
+
 }

@@ -14,6 +14,7 @@ public class Wrapper {
 
 	static Logger logger = Logger.getLogger("Wrapper_Class");
 
+	// Clicks on provided Android element
 	public static void click(AndroidDriver<AndroidElement> driver, AndroidElement el) {
 		try {
 			(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(el));
@@ -26,6 +27,7 @@ public class Wrapper {
 		}
 	}
 
+	// Enters text to the provided Edit text field element
 	public static void sendKeys(AndroidDriver<AndroidElement> driver, AndroidElement el, String text) {
 		try {
 			(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(el));
@@ -38,7 +40,8 @@ public class Wrapper {
 		}
 	}
 
-	public static void scroll(AndroidDriver<AndroidElement> driver, AndroidElement el, String text) {
+	// Scroll down untill the element is present
+	public static void scroll(AndroidDriver<AndroidElement> driver, AndroidElement el) {
 		try {
 			(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeSelected((el)));
 			driver.findElementByAndroidUIAutomator(
@@ -53,6 +56,7 @@ public class Wrapper {
 		}
 	}
 
+	// Return Text of an element
 	public static String getText(AndroidDriver<AndroidElement> driver, AndroidElement el) {
 		String text = null;
 		try {
@@ -67,6 +71,7 @@ public class Wrapper {
 		return text;
 	}
 
+	// Validate if the result macthes to expected condition
 	public static void assertTrue(AndroidDriver<AndroidElement> driver, AndroidElement el, String expected) {
 		try {
 			(new WebDriverWait(driver, 10)).until(ExpectedConditions.elementToBeClickable(el));

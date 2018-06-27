@@ -4,8 +4,8 @@ import java.net.MalformedURLException;
 
 import org.testng.annotations.Test;
 
-import PageObjects.homePage;
-import PageObjects.loginPage;
+import PageObjects.HomePage;
+import PageObjects.LoginPage;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
@@ -17,15 +17,21 @@ public class Login extends Base {
 		AndroidDriver<AndroidElement> driver = Launch();
 
 		// Wrapper wrapper=new Wrapper();
-		homePage home = new homePage(driver);
+		HomePage home = new HomePage(driver);
 
-		loginPage login = new loginPage(driver);
+		LoginPage login = new LoginPage(driver);
 
+		// Click on the three horizontal line icon on top left
 		Wrapper.click(driver, home.Home);
+		// Click on Login Image
 		Wrapper.click(driver, login.LoginImage);
+		// Enter Username
 		Wrapper.sendKeys(driver, login.UsernameEditText, username);
+		// Enter Password
 		Wrapper.sendKeys(driver, login.PasswordEditText, password);
+		// Click Login button
 		Wrapper.click(driver, login.LoginButton);
+		// Validate if login was successful
 		Wrapper.assertTrue(driver, home.signInStatus, "expected name");
 
 		return driver;
